@@ -84,11 +84,11 @@ fun AndroidComposeMigrationDemoTheme(
         LightColors
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
-//    MdcTheme(content = content)
+//    MaterialTheme(
+//        colors = colors,
+//        typography = Typography,
+//        shapes = Shapes,
+//        content = content
+//    )
+    MdcTheme(content = content)
 }
