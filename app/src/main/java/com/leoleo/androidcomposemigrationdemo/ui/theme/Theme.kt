@@ -5,6 +5,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import com.google.accompanist.themeadapter.material.MdcTheme
 
 // m3用の属性値はコメントアウトする
 private val LightColors = lightColors(
@@ -89,5 +90,5 @@ fun AndroidComposeMigrationDemoTheme(
         shapes = Shapes,
         content = content
     )
-    // MdcTheme(content = content)
+//    MdcTheme(content = content)
 }
