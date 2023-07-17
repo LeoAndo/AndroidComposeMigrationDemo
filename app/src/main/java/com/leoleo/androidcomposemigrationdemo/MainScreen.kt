@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -37,7 +37,7 @@ fun MainScreen(
     dashboadViewModel: DashboardViewModel,
     notificationsViewModel: NotificationsViewModel
 ) {
-    var selectedIndex by rememberSaveable { mutableIntStateOf(0) }
+    var selectedIndex by rememberSaveable { mutableStateOf(0) }
     val items = BottomItem.values()
     AppSurface(modifier) {
         Scaffold(
