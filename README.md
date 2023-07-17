@@ -1,6 +1,10 @@
  # AndroidComposeMigrationDemo
 既存のMaterial2 + Android View使用プロジェクトに対してjetpack-composeを導入する技術調査用コード
 
+# 開発メモ
+https://github.com/LeoAndo/AndroidComposeMigrationDemo/issues/2<br>
+イシューにまとめています。<br>
+
 # capture
 
 | view                                               | view(dark)                                              | compose                                               | compose(dark)                                            | compose(MdcTheme)                                              | compose(MdcTheme dark)                                              |
