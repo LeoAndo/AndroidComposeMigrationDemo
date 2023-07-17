@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- custom color定義-ADD -->
-    <color name="seed">#715d00</color>
+    <color name="seed">#00715D00</color>
     <color name="md_theme_light_primary">#715D00</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#FFE175</color>

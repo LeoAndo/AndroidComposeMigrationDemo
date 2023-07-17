@@ -2,11 +2,11 @@
 <resources>
 
     <style name="TextAppearance.MyApp.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/aldrich</item>
+        <item name="fontFamily">@font/bungee</item>
     </style>
 
     <style name="ShapeAppearance.AndroidComposeMigrationDemo.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
-        <item name="cornerFamilyTopLeft">cut</item>
+        <item name="cornerFamily">cut</item>
         <item name="cornerSize">12dp</item>
     </style>
 </resources>
