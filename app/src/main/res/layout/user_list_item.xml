@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="12dp"
+    android:elevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textAppearance="?attr/textAppearanceBody1"
             app:layout_constraintStart_toEndOf="@id/image"
             app:layout_constraintTop_toTopOf="@id/image"
             tools:text="富士の湯" />
@@ -47,4 +48,4 @@
             app:layout_constraintTop_toBottomOf="@id/name"
             tools:text="台東区浅草sadsadasdasdasdasdasdasdasdasdasasddasdasd" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
