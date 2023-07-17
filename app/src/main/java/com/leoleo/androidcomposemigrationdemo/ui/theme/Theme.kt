@@ -99,7 +99,6 @@ fun AndroidComposeMigrationDemoTheme(
             }
         }
      */
-
     MaterialTheme(
         colors = colors,
         typography = Typography,
