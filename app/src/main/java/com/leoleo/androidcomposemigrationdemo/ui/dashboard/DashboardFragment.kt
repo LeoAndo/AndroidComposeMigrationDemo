@@ -20,7 +20,8 @@ class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
                 setViewCompositionStrategy(
                     ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
                 )
-                setContent { DashboardScreen(viewModel = viewModel) }
+                setContent {DashboardScreen(viewModel = viewModel)
+                }
             }
         }
     }
