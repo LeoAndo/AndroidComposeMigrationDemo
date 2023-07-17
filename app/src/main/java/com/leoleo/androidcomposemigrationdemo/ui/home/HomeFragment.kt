@@ -1,15 +1,15 @@
 package com.leoleo.androidcomposemigrationdemo.ui.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.leoleo.androidcomposemigrationdemo.R
 import com.leoleo.androidcomposemigrationdemo.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -17,22 +17,46 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    private val homeViewModel by viewModels<HomeViewModel>()
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        _binding = FragmentHomeBinding.bind(view)
+
+        val myAdapter = MyListAdapter()
+        binding.userList.apply {
+            adapter = myAdapter
+            layoutManager = LinearLayoutManager(requireContext())
+            setHasFixedSize(false)
         }
-        return root
+
+        binding.button.setOnClickListener {
+            homeViewModel.getUsers()
+        }
+
+        homeViewModel.uiState.observe(viewLifecycleOwner) {
+
+            binding.userList.isVisible = when (it) {
+                is Data -> true
+                else -> false
+            }
+            binding.loading.isVisible = when (it) {
+                Loading -> true
+                else -> false
+            }
+            binding.errorMessage.isVisible = when (it) {
+                is Error -> true
+                else -> false
+            }
+
+            when (it) {
+                is Data -> myAdapter.submitList(it.users)
+                is Error -> binding.errorMessage.text = it.message
+                Initial -> {}
+                Loading -> {}
+            }
+        }
     }
 
     override fun onDestroyView() {
@@ -40,3 +64,4 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
+
