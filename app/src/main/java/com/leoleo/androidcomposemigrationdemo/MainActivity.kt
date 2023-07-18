@@ -1,35 +1,25 @@
 package com.leoleo.androidcomposemigrationdemo
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.leoleo.androidcomposemigrationdemo.databinding.ActivityMainBinding
+import androidx.activity.ComponentActivity
+import androidx.activity.viewModels
+import androidx.activity.compose.setContent
+import com.leoleo.androidcomposemigrationdemo.ui.dashboard.DashboardViewModel
+import com.leoleo.androidcomposemigrationdemo.ui.home.HomeViewModel
+import com.leoleo.androidcomposemigrationdemo.ui.notifications.NotificationsViewModel
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-
+class MainActivity : ComponentActivity() {
+    private val homeViewModel by viewModels<HomeViewModel>()
+    private val dashboardViewModel by viewModels<DashboardViewModel>()
+    private val notificationsViewModel by viewModels<NotificationsViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+        setContent {
+            MainScreen(
+                viewModel = homeViewModel,
+                dashboadViewModel = dashboardViewModel,
+                notificationsViewModel = notificationsViewModel
             )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        }
     }
 }

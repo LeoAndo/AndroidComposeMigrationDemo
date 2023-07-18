@@ -10,7 +10,7 @@ import com.leoleo.androidcomposemigrationdemo.data.UserRepository
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
-class HomeViewModel(
+class HomeViewModel constructor(
     private val repository: UserRepository = Container.userRepository,
 ) : ViewModel() {
     var uiState by mutableStateOf<UiState>(Initial)

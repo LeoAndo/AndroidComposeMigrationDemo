@@ -3,14 +3,14 @@ package com.leoleo.androidcomposemigrationdemo.ui
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.Wallpapers
+//import androidx.compose.ui.tooling.preview.Wallpapers
 
 @Preview(
     name = "Phone Landscape",
     device = Devices.PHONE,
     uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL,
     showBackground = true,
-    wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
+ //   wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
 )
 annotation class PreviewPhoneDevice
 
@@ -19,7 +19,7 @@ annotation class PreviewPhoneDevice
     device = Devices.TABLET,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     name = "Tablet",
-    wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
+ //   wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
 )
 annotation class PreviewTabletDevice
 
@@ -28,7 +28,7 @@ annotation class PreviewTabletDevice
     device = Devices.FOLDABLE,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     name = "Foldable",
-    wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
+ //   wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
 )
 annotation class PreviewFoldableDevice
 
@@ -37,7 +37,7 @@ annotation class PreviewFoldableDevice
     device = Devices.DESKTOP,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     name = "Desktop",
-    wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
+ //   wallpaper = Wallpapers.BLUE_DOMINATED_EXAMPLE
 )
 annotation class PreviewDesktopDevice
 

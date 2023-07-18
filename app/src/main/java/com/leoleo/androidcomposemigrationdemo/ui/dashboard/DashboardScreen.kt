@@ -1,7 +1,5 @@
 package com.leoleo.androidcomposemigrationdemo.ui.dashboard
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.MaterialTheme
@@ -10,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import com.leoleo.androidcomposemigrationdemo.ui.AppSurface
 import com.leoleo.androidcomposemigrationdemo.ui.PreviewPhoneDevice
 
