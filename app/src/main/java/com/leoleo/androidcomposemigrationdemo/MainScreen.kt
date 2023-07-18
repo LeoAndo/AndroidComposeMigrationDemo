@@ -47,7 +47,9 @@ fun MainScreen(
                 }
             },
             bottomBar = {
-                BottomNavigation {
+                BottomNavigation(
+                    // backgroundColor = MaterialTheme.colors.surface,
+                ) {
                     items.forEachIndexed { index, item ->
                         BottomNavigationItem(
                             icon = {

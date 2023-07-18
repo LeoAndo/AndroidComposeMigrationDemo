@@ -1,15 +1,18 @@
 package com.leoleo.androidcomposemigrationdemo.ui.theme
 
+import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
+import androidx.compose.material.primarySurface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+
 // import com.google.accompanist.themeadapter.material.MdcTheme
 
 // m3用の属性値はコメントアウトする
@@ -88,17 +91,18 @@ fun AndroidComposeMigrationDemoTheme(
     } else {
         LightColors
     }
-    /*
-        val view = LocalView.current
-        if (!view.isInEditMode) {
-            val activity = view.context as? Activity ?: return
-            SideEffect {
-                activity.window.navigationBarColor = Color.Transparent.toArgb()
-                activity.window.statusBarColor = Color.Transparent.toArgb()
-                WindowCompat.getInsetsController(activity.window, view).isAppearanceLightStatusBars = darkTheme
-            }
+
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        val activity = view.context as? Activity ?: return
+        SideEffect {
+            activity.window.navigationBarColor = Color.Transparent.toArgb()
+            activity.window.statusBarColor = colors.primarySurface.toArgb() // Color.Transparent.toArgb()
+            WindowCompat.getInsetsController(activity.window, view).isAppearanceLightStatusBars =
+                darkTheme
         }
-     */
+    }
+
     MaterialTheme(
         colors = colors,
         typography = Typography,
